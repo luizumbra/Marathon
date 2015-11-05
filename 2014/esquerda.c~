@@ -1,32 +1,46 @@
 #include<stdio.h>
 
-char volver(int, char[]);
+int executarComandos(char*);
+char volver(int, char*);
 
 int main(int argc, char **argv) {
-  char v[] = {'d', 'd', 'e'};
-  printf("%c\n", volver(3, v));
+  printf("%s\n", argv[1]);
+  printf("%c\n", volver(argc, argv[1]));
   return 0;
 }
 
 /**
- * @arg n, número de comandos emitidos
- * @arg v, a série de comandos
- * @return direção para o qual o recruta deve ter a face voltada - 'n' (norte), 'l' (leste), 's' (sul), 'o' (oeste)
+ * Volver
+ * @arg n, quantidade de comandos dito pelo sargento.
+ * @arg l, vetor com os comandos dito pelo sargento.
+ * @return a direção para o qual o recruta deve ter sua face voltada após executar a série de comandos. Nessa etapa deve conter os caracteres 'N', 'L', 'S' e 'S' para representar os quatro pontos cardeais.
  **/
-char volver(int n, char v[]) {
-  char rosaDosVentos[4] = {'n', 'l', 's', 'o'};
-  int i, vol = 0;
-  for(i = 0; i < n; i++) {
-    // Virar para a esquerda é o equivalente a andar 3 posições no sentido horário
-    if(v[i] == 'e') {
-      vol = (vol + 3) % 4;
-    }
+char volver(int n, char *l) {
+  char rosaDosVentos[4] = {'N', 'L', 'S', 'O'};
 
-    // Virar para a direita é o equivalente a andar uma posição no sentido horário
-    else if(v[i] == 'd') {
-      vol = (vol + 1) % 4;
-    }
+  // Executa os comando do sargento
+  unsigned int direcaoDaFace = executarComandos(l) % 4;
+
+  // Descobre a direção da face, a partir da Rosa dos Ventos
+  return rosaDosVentos[direcaoDaFace];
+}
+
+/**
+ * Executar Comandos
+ * @arg l, ponteiro para a lista de comandos do sergento
+ * @return, um inteiro representando os giros no sentido horário do soldado
+ **/
+int executarComandos(char *l) {
+  // 'D', representa girar um passo no sentido horário
+  if(*l == 'D') {
+    return executarComandos((l + 1)) + 1;
   }
-
-  return rosaDosVentos[vol];
+  // 'E', representa girar três passos no sentido horário
+  else if(*l == 'E') {
+    return executarComandos((l + 1)) + 3;
+  }
+  // '\0', não há giro
+  else {
+    return 0;
+  }
 }
