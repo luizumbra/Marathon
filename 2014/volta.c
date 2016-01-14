@@ -6,7 +6,7 @@ double espaco(double. int, int);
 
 int main(int argc, char **argv) {
   int tempoA, tempoB;
-  int nVoltasA = 0;
+  int nVoltasA;
   double espacoB;
   double vmB;
   
@@ -17,6 +17,7 @@ int main(int argc, char **argv) {
   // Calcular a velocidade media por valotas de B
   vmB = velocidadeMedia(tampoB);
   
+  nVoltasA = 0;
   do {
     nVoltasA++;
     
@@ -24,6 +25,28 @@ int main(int argc, char **argv) {
     espacoB = espaco(vmB, tempoA, nVoltasA);
   } while(!((nVoltasA - espacoB) > 0));
   
+  printf("%d voltas\n", (nVoltasA - espacoB));
   return 0;
 }
+
+/**
+ * Velocidade Media
+ * @arg tempo: Integer, tempo em segundos para o número de voltas
+ * @return um double contendo a velocidade média para uma volta
+ */
+double velocidadeMedia(int tempo) {
+  return (1 / tempo);
+}
+
+/**
+ * Espaco
+ * @arg vm: Double, velocidade média do veículo
+ * @arg tempo: Integer, tempo percorrido
+ * @arg n: Integer, número que irá a multiplicar o tempo percorrido
+ * @return um Double contendo o espço percorrido das voltas
+ */
+double espaco(double vm, int tempo, int n) {
+  return (vm * tempo * n);
+}
+
 
