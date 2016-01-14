@@ -10,5 +10,5 @@
 - Problema C, porta.c, completo
 
 # Caderno de problemas
-- Problema A, volta.c, incompleto
+- Problema A, volta.c, completo
 - Problema B, baralho.c, completo

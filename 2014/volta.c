@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 double velocidadeMedia(int);
-double espaco(double. int, int);
+double espaco(double, int, int);
 
 int main(int argc, char **argv) {
   int tempoA, tempoB;
@@ -14,8 +14,8 @@ int main(int argc, char **argv) {
   tempoA = atoi(argv[1]);
   tempoB = atoi(argv[2]);
   
-  // Calcular a velocidade media por valotas de B
-  vmB = velocidadeMedia(tampoB);
+  // Calcular a velocidade media por valtas de B
+  vmB = velocidadeMedia(tempoB);
   
   nVoltasA = 0;
   do {
@@ -23,9 +23,9 @@ int main(int argc, char **argv) {
     
     // Calcular o espaço percorrido a cada volta de A
     espacoB = espaco(vmB, tempoA, nVoltasA);
-  } while(!((nVoltasA - espacoB) > 0));
+  } while((nVoltasA - espacoB) <= 1.);
   
-  printf("%d voltas\n", (nVoltasA - espacoB));
+  printf("%d voltas\n", nVoltasA);
   return 0;
 }
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
  * @return um double contendo a velocidade média para uma volta
  */
 double velocidadeMedia(int tempo) {
-  return (1 / tempo);
+  return (1.0 / tempo);
 }
 
 /**
