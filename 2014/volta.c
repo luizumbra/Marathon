@@ -1,61 +1,52 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef struct carro {
-  unsigned double anguloPorSeg;
-  unsigned double angulo;
-  unsigned int numVolta;
-  unsigned int seg;
-} Carro;
-
-void pause(Carro a, Carro b){
-
-  fflush(stdin);
-  getchar();
-}
-
-
-
-int volta(Carro, Carro);
+double velocidadeMedia(int);
+double espaco(double. int, int);
 
 int main(int argc, char **argv) {
-  Carro x, y;
-  x.angulo = y.angulo = 0.0;
-  x.numVolta = y.numVolta = 0;
-
-  x.seg = atoi(argv[1]);
-  y.seg = atoi(argv[2]);
-
-  x.anguloPorSeg = 360 / x.seg;
-  y.anguloPorSeg = 360 / y.seg;
-
-  printf("%d\n", volta(x, y));
+  int tempoA, tempoB;
+  int nVoltasA;
+  double espacoB;
+  double vmB;
+  
+  // Pega os tempos do carro a e b;
+  tempoA = atoi(argv[1]);
+  tempoB = atoi(argv[2]);
+  
+  // Calcular a velocidade media por valotas de B
+  vmB = velocidadeMedia(tampoB);
+  
+  nVoltasA = 0;
+  do {
+    nVoltasA++;
+    
+    // Calcular o espaço percorrido a cada volta de A
+    espacoB = espaco(vmB, tempoA, nVoltasA);
+  } while(!((nVoltasA - espacoB) > 0));
+  
+  printf("%d voltas\n", (nVoltasA - espacoB));
   return 0;
 }
 
 /**
- * Volta
- * @arg x, o tempo em segundos que o piloto mais rápido faz a volta
- * @arg y, o tempo em segundo que o pilito mais lento faz a volta
- * @return a volta em que o piloto mais lento se torna um retardatário
- **/
-int volta(Carro x, Carro y) {
-  unsigned int seg = 0;
-  while(!(x.angulo <= y.angulo && x.numVolta < y.numVolta)) {
-    printf("while(!(%d <= %f))")
-    // Calcula o angulo
-    x.angulo = (x.anguloPorSeg + x.angulo) >= 360 ? (x.anguloPorSeg + x.angulo - 360) : (x.anguloPorSeg + x.angulo);
-    y.angulo = (y.anguloPorSeg + y.angulo) >= 360 ? (y.anguloPorSeg + y.angulo - 360) : (y.anguloPorSeg + y.angulo);
-
-    // Calcula a volta
-    seg++;
-    if((seg % x.seg) == 0) {
-      x.numVolta++;
-    }
-    if((seg % y.seg) == 0) {
-      y.numVolta++;
-    }
-  }
-
-  return x.numVolta;
+ * Velocidade Media
+ * @arg tempo: Integer, tempo em segundos para o número de voltas
+ * @return um double contendo a velocidade média para uma volta
+ */
+double velocidadeMedia(int tempo) {
+  return (1 / tempo);
 }
+
+/**
+ * Espaco
+ * @arg vm: Double, velocidade média do veículo
+ * @arg tempo: Integer, tempo percorrido
+ * @arg n: Integer, número que irá a multiplicar o tempo percorrido
+ * @return um Double contendo o espço percorrido das voltas
+ */
+double espaco(double vm, int tempo, int n) {
+  return (vm * tempo * n);
+}
+
+
