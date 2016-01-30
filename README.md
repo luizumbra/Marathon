@@ -12,3 +12,5 @@
 # Caderno de problemas
 - Problema A, volta.c, completo
 - Problema B, baralho.c, completo
+- Problema C, confederacao.c, incompleto
+- Problema D, minhoca.c, incompleto
