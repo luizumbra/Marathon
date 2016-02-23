@@ -27,11 +27,11 @@ int main(int argc, char **argv) {
 
   // Número de salões
   s = atoi(argv[1]);
-  // printf("%d", s);
+  printf("%d ", s);
 
   // Número de túneis
   t = atoi(argv[2]);
-  // printf("%d\n", t);
+  printf("%d\n", t);
 
   // Descrição do Túnel
   Tunel descT[t];
@@ -40,12 +40,12 @@ int main(int argc, char **argv) {
     descT[i].b = atoi(argv[i * 3 + 4]);
     descT[i].c = atoi(argv[i * 3 + 5]);
   }
-  // mostrarTunel(descT, t);
+  mostrarTunel(descT, t);
 
   // Número de consultas
   i = (i - 1) * 3 + 5 + 1;
   q = atoi(argv[i]);
-  // printf("%d\n", q);
+  printf("%d\n", q);
   
   // Descrição da Consulta
   Consulta descC[q];
@@ -53,7 +53,20 @@ int main(int argc, char **argv) {
     descC[j].x = atoi(argv[j * 2 + i + 1]);
     descC[j].m = atoi(argv[j * 2 + i + 2]);
   }
-  // mostrarConsulta(descC, q);
+  mostrarConsulta(descC, q);
+
+  // Re-montar a descrição de túneis
+  Tunel descTT[t * 2];
+  for(i = 0; i < t * 2; i += 2) {
+    descTT[i].a = descT[i / 2].a;
+    descTT[i].b = descT[i / 2].b;
+    descTT[i].c = descT[i / 2].c;
+    
+    descTT[i + 1].a = descT[i / 2].b;
+    descTT[i + 1].b = descT[i / 2].a;
+    descTT[i + 1].c = descT[i / 2].c;
+  }
+  mostrarTunel(descTT, t * 2);
   
   return 0;
 }
@@ -71,3 +84,4 @@ void mostrarConsulta(Consulta *c, int t) {
     printf("%d %d\n", c[i].x, c[i].m);
   }
 }
+
