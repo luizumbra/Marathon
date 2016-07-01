@@ -18,6 +18,7 @@ typedef struct consulta {
 
 void mostrarTunel(Tunel*, int);
 void mostrarConsulta(Consulta*, int);
+int aEstrelaEstrela(Tunel*, Consulta, int, int, int)
 
 int main(int argc, char **argv) {
   int i, j;
