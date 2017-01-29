@@ -1,16 +1,5 @@
-## Matona de Programação - Brasil
-- Resolução de problemas da maratona de programação brasileira.
-- Todos os código foram feitos na linguagem C.
+# ACM International Collegiate Programming Contest - Brazil
+- Carcteristic: Selfstudy
+- Programming Language: C/C++ (contest of 2014 - Temporary); Mathematica (contest of 2016)
 
-## Ano de 2014
-
-# Aquecimento
-- Problema A, mario.c, incompleto
-- Problema B, esquerda.c, completo
-- Problema C, porta.c, completo
-
-# Caderno de problemas
-- Problema A, volta.c, completo
-- Problema B, baralho.c, completo
-- Problema C, confederacao.c, incompleto
-- Problema D, minhoca.c, incompleto
+This repository will be exclusively used to a self study about the programming language Wolfram Mathematica. All the problems can be found at [here](http://maratona.ime.usp.br) (Last-viwed: January 29, 2017).
