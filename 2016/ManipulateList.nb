@@ -1,0 +1,313 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12056,        305]
+NotebookOptionsPosition[     11681,        288]
+NotebookOutlinePosition[     12038,        304]
+CellTagsIndexPosition[     11995,        301]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Manipulate", " ", "List"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Description", ":", " ", 
+     RowBox[{
+     "In", " ", "this", " ", "NB", " ", "has", " ", "some", " ", "functions", 
+      " ", "to", " ", "manipulate", " ", "Lists"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+    "Created", " ", "by", " ", "Luiz", " ", "Antonio", " ", "Marques", " ", 
+     "Ferreira"}], ",", " ", 
+    RowBox[{"in", " ", "january", " ", "25"}], ",", " ", "2016", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"email", ":", " ", 
+     RowBox[{"luiz", ".", 
+      RowBox[{"umbra", "@", "gmail"}], ".", "com"}]}]}], "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"EmptyListQ", "[", "l_", "]"}], ":=", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"EmptyListQ", ",", "\[IndentingNewLine]", 
+     RowBox[{"@", 
+      RowBox[{"arg", ":", " ", "l"}]}], ",", " ", 
+     RowBox[{"a", " ", "simple", " ", "list"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"@", 
+      RowBox[{"return", ":", " ", "True"}]}], ",", " ", 
+     RowBox[{"case", " ", "l", " ", "is", " ", "empty"}], ",", 
+     "\[IndentingNewLine]", "         ", "False", ",", " ", "otherwise", ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"@", 
+      RowBox[{"sample", ":", "\[IndentingNewLine]", 
+       RowBox[{"In", "[", "1", "]"}], ":", " ", 
+       RowBox[{
+        RowBox[{"EmptyListQ", "[", 
+         RowBox[{"{", "}"}], "]"}], "\[IndentingNewLine]", 
+        RowBox[{"Out", "[", "1", "]"}]}], ":", " ", "True"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"@", 
+      RowBox[{"sample", ":", "\[IndentingNewLine]", 
+       RowBox[{"In", "[", "2", "]"}], ":", " ", 
+       RowBox[{
+        RowBox[{"EmptyListQ", "[", 
+         RowBox[{"List", "[", "]"}], "]"}], "\[IndentingNewLine]", 
+        RowBox[{"Out", "[", "2", "]"}]}], ":", " ", "True"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"@", 
+      RowBox[{"sample", ":", "\[IndentingNewLine]", 
+       RowBox[{"In", "[", "3", "]"}], ":", " ", 
+       RowBox[{
+        RowBox[{"EmptyListQ", "[", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", " ", "2", ",", " ", "3", ",", " ", "4"}], "}"}], 
+         "]"}], "\[IndentingNewLine]", 
+        RowBox[{"Out", "[", "3", "]"}]}], ":", " ", "False"}]}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"@", 
+      RowBox[{"error", ":", "\[IndentingNewLine]", 
+       RowBox[{
+       "Input_exception:", " ", "l", " ", "is", " ", "not", " ", "a", " ", 
+        "list", " ", "type"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"l", "\[Equal]", 
+    RowBox[{"{", "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.694374170480492*^9, 3.6943742892295923`*^9}, {
+   3.6943743419003563`*^9, 3.694374365539838*^9}, {3.6943745030489197`*^9, 
+   3.6943747105368767`*^9}, {3.694374761842724*^9, 3.694374774738998*^9}, 
+   3.694374870885874*^9, {3.694374924844449*^9, 3.694374926852323*^9}, {
+   3.694375179943997*^9, 3.6943752056317663`*^9}, 3.6951492971307783`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MemberEachElementQ", "[", "l_", "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"MemberEachElementQ", ",", "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"arg", ":", " ", "l"}]}], ",", " ", 
+    RowBox[{"a", " ", "list", " ", "of", " ", "integers"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"@", "return"}], " ", "True"}], ",", " ", 
+    RowBox[{
+    "case", " ", "has", " ", "repeat", " ", "elements", " ", "in", " ", "the",
+      " ", "list", " ", "l", "\[IndentingNewLine]", "         ", "False"}], 
+    ",", " ", "otherwise", ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    
+    RowBox[{"@", 
+     RowBox[{"sample", ":", "\[IndentingNewLine]", 
+      RowBox[{"Input", "[", "1", "]"}], ":", " ", 
+      RowBox[{
+       RowBox[{"MemberEachElementQ", "[", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", " ", "90", ",", " ", "77", ",", " ", "44"}], "}"}],
+         "]"}], "\[IndentingNewLine]", 
+       RowBox[{"Output", "[", "1", "]"}]}], ":", " ", "False"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"sample", ":", "\[IndentingNewLine]", 
+      RowBox[{"Input", "[", "2", "]"}], ":", " ", 
+      RowBox[{
+       RowBox[{"MemberEachElementQ", "[", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", " ", "44", ",", " ", "86", ",", " ", "0"}], "}"}], 
+        "]"}], "\[IndentingNewLine]", 
+       RowBox[{"Output", "[", "2", "]"}]}], ":", " ", "True"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"sample", ":", "\[IndentingNewLine]", 
+      RowBox[{"Input", "[", "3", "]"}], ":", " ", 
+      RowBox[{
+       RowBox[{"MemberEachElementQ", "[", 
+        RowBox[{"{", "}"}], "]"}], "\[IndentingNewLine]", 
+       RowBox[{"Output", "[", "3", "]"}]}], ":", " ", "False"}]}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"error", ":", "\[IndentingNewLine]", 
+      RowBox[{
+      "Input_exception:", " ", "l", " ", "is", " ", "not", " ", "a", " ", 
+       "list", " ", "type"}]}]}], ",", " ", "TODO"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"l", "\[Equal]", 
+     RowBox[{"{", "}"}]}], ",", " ", "False", ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Rest", "[", "#1", "]"}], "\[Equal]", 
+          RowBox[{"{", "}"}]}], ",", " ", "False", ",", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"MemberQ", "[", 
+            RowBox[{
+             RowBox[{"Rest", "[", "#1", "]"}], ",", 
+             RowBox[{"First", "[", "#1", "]"}]}], "]"}], ",", "True", ",", 
+           RowBox[{"#0", "[", 
+            RowBox[{"Rest", "[", "#1", "]"}], "]"}]}], "]"}]}], "]"}], ")"}], 
+      "&"}], "[", "l", "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.694375103589267*^9, 3.694375171846747*^9}, {
+  3.695149291460887*^9, 3.695149301811013*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CountIntercalation", "[", "l_", "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Count", " ", "Intercalation"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"arg", ":", " ", "l"}]}], ",", " ", 
+    RowBox[{"a", " ", "simple", " ", "list"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"return", ":", " ", 
+      RowBox[{
+      "the", " ", "number", " ", "of", " ", "switch", " ", "of", " ", "each", 
+       " ", "element", " ", "of", " ", "l"}]}]}], ",", "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"sample", ":", "\[IndentingNewLine]", 
+      RowBox[{"In", "[", "1", "]"}], ":", " ", 
+      RowBox[{
+       RowBox[{"CoutnIntercalation", "[", 
+        RowBox[{"{", "}"}], "]"}], "\[IndentingNewLine]", 
+       RowBox[{"Out", "[", "1", "]"}]}], ":", " ", "0"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"sample", ":", "\[IndentingNewLine]", 
+      RowBox[{"In", "[", "2", "]"}], ":", " ", 
+      RowBox[{
+       RowBox[{"CountIntercalation", "[", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", " ", "1", ",", " ", "1"}], "}"}], "]"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"Out", "[", "2", "]"}]}], ":", " ", "0"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"sample", ":", "\[IndentingNewLine]", 
+      RowBox[{"In", "[", "3", "]"}], ":", " ", 
+      RowBox[{
+       RowBox[{"CountIntercalation", "[", 
+        RowBox[{"{", 
+         RowBox[{
+         "1", ",", " ", "2", ",", " ", "2", ",", " ", "2", ",", " ", "2", ",",
+           " ", "1"}], "}"}], "]"}], "\[IndentingNewLine]", 
+       RowBox[{"Out", "[", "3", "]"}]}], ":", " ", "2"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"sample", ":", "\[IndentingNewLine]", 
+      RowBox[{"In", "[", "4", "]"}], ":", " ", 
+      RowBox[{
+       RowBox[{"CountIntercalation", "[", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", " ", "2", ",", " ", "3"}], "}"}], "]"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"Out", "[", "4", "]"}]}], ":", " ", "2"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"sample", ":", "\[IndentingNewLine]", 
+      RowBox[{"In", "[", "5", "]"}], ":", " ", 
+      RowBox[{
+       RowBox[{"CountIntercalation", "[", 
+        RowBox[{"{", 
+         RowBox[{"a", ",", " ", 
+          RowBox[{"{", "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", " ", "2"}], "}"}], ",", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"3", ",", "4"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"5", ",", "6"}], "}"}]}], "}"}], ",", " ", "\"\<r\>\"", 
+          ",", " ", "3"}], "}"}], "]"}], "\[IndentingNewLine]", 
+       RowBox[{"Out", "[", "5", "]"}]}], ":", " ", "5"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"sample", ":", "\[IndentingNewLine]", 
+      RowBox[{"In", "[", "6", "]"}], ":", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"CountIntercalation", "[", 
+        RowBox[{"{", "1", "}"}], "]"}], "\[IndentingNewLine]", 
+       RowBox[{"Out", "[", "6", "]"}]}], ":", " ", "0"}]}], ",", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"error", ":", "\[IndentingNewLine]", 
+      RowBox[{
+      "Input_exception:", " ", "l", " ", "is", " ", "not", " ", "a", " ", 
+       "list", " ", "type"}]}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"@", 
+     RowBox[{"error", ":", "\[IndentingNewLine]", "TODO", ":", " ", 
+      RowBox[{
+      "l", " ", "may", " ", "contain", " ", "any", " ", "elements", " ", 
+       "include", " ", "others", " ", "lists"}]}]}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"EmptyListQ", "[", "l", "]"}], ",", " ", "0", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Rest", "[", "l", "]"}], "\[Equal]", 
+       RowBox[{"{", "}"}]}], ",", " ", "0", ",", 
+      RowBox[{"(*", 
+       RowBox[{"end", " ", "of", " ", "list"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"First", "[", "l", "]"}], "\[Equal]", 
+         RowBox[{"First", "[", 
+          RowBox[{"Rest", "[", "l", "]"}], "]"}]}], ",", " ", 
+        RowBox[{"CountIntercalation", "[", 
+         RowBox[{"Rest", "[", "l", "]"}], "]"}], ",", 
+        RowBox[{"1", "+", 
+         RowBox[{"CountIntercalation", "[", 
+          RowBox[{"Rest", "[", "l", "]"}], "]"}]}]}], "]"}]}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.694382721152255*^9, 3.694383123733577*^9}, {
+  3.694383188282506*^9, 3.694383335549664*^9}, {3.6943833692854357`*^9, 
+  3.694383500744483*^9}, {3.694386327578558*^9, 3.694386331331567*^9}, {
+  3.694386697791217*^9, 3.694386802130526*^9}, {3.695149308203886*^9, 
+  3.6951493114118023`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.694426608714109*^9, 3.69442660959446*^9}}]
+},
+WindowSize->{614, 755},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3064, 68, 495, "Input"],
+Cell[3625, 90, 3011, 72, 474, "Input"],
+Cell[6639, 164, 4944, 119, 726, "Input"],
+Cell[11586, 285, 91, 1, 32, "Input"]
+}
+]
+*)
+

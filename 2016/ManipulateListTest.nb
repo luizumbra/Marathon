@@ -1,0 +1,167 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5516,        159]
+NotebookOptionsPosition[      5188,        142]
+NotebookOutlinePosition[      5545,        158]
+CellTagsIndexPosition[      5502,        155]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Manipulate", " ", "List", " ", "Test"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Description", ":", " ", 
+     RowBox[{
+     "Here", " ", "will", " ", "be", " ", "tested", " ", "the", " ", "NB", 
+      " ", "functions", " ", "of", " ", 
+      RowBox[{"ManipulateList", ".", "nb"}]}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Last", " ", 
+     RowBox[{"Update", ":", " ", 
+      RowBox[{"January", " ", "25"}]}]}], ",", " ", "2016", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+    "Created", " ", "by", " ", "Luiz", " ", "Antonio", " ", "Marques", " ", 
+     "Ferreira", " ", 
+     RowBox[{"(", 
+      RowBox[{"luiz", ".", 
+       RowBox[{"umbra", "@", "gmail"}], ".", "com"}], ")"}]}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"EmptyListQ", "[", 
+       RowBox[{"{", "}"}], "]"}], "\[Equal]", "True"}], ")"}], "\[And]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"EmptyListQ", "[", 
+       RowBox[{"List", "[", "]"}], "]"}], "\[Equal]", "True"}], ")"}], 
+    "\[And]", "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"EmptyListQ", "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", " ", "2", ",", " ", "3", ",", " ", "4"}], "}"}], 
+       "]"}], "\[Equal]", "False"}], ")"}], "\[And]", "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"MemberEachElementQ", "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", " ", "90", ",", " ", "77", ",", " ", "44"}], "}"}], 
+       "]"}], "\[Equal]", "False"}], ")"}], "\[And]", "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"MemberEachElementQ", "[", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", " ", "44", ",", " ", "86", ",", " ", "0"}], "}"}], 
+       "]"}], "\[Equal]", "True"}], ")"}], "\[And]", "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"MemberEachElementQ", "[", 
+       RowBox[{"{", "}"}], "]"}], "\[Equal]", "False"}], ")"}], "\[And]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"CountIntercalation", "[", 
+       RowBox[{"{", "}"}], "]"}], "\[Equal]", "0"}], ")"}], "\[And]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"CountIntercalation", "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", " ", "1", ",", " ", "1"}], "}"}], "]"}], "\[Equal]",
+       "0"}], ")"}], "\[And]", "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"CountIntercalation", "[", 
+       RowBox[{"{", 
+        RowBox[{
+        "1", ",", " ", "2", ",", " ", "2", ",", " ", "2", ",", " ", "2", ",", 
+         " ", "1"}], "}"}], "]"}], "\[Equal]", "2"}], ")"}], "\[And]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"CountIntercalation", "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", " ", "2", ",", " ", "3"}], "}"}], "]"}], "\[Equal]",
+       "2"}], ")"}], "\[And]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"CountIntercalation", "[", 
+         RowBox[{"{", 
+          RowBox[{"\"\<a\>\"", ",", " ", 
+           RowBox[{"{", "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", " ", "2"}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"3", ",", "4"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"5", ",", "6"}], "}"}]}], "}"}], ",", " ", "\"\<r\>\"", 
+           ",", " ", "3"}], "}"}], "]"}], "\[Equal]", "5"}], ")"}], 
+      "\[And]"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"CountIntercalation", "[", 
+       RowBox[{"{", "1", "}"}], "]"}], "\[Equal]", "0"}], ")"}]}], 
+   ")"}]}]], "Input",
+ CellChangeTimes->{{3.6943743952447557`*^9, 3.694374498112479*^9}, {
+  3.69437479150681*^9, 3.694374863141572*^9}, {3.694374954589879*^9, 
+  3.6943750441733637`*^9}, {3.694375075256681*^9, 3.6943750774226418`*^9}, {
+  3.694383147506518*^9, 3.694383172553486*^9}, {3.69438352406735*^9, 
+  3.6943836527442093`*^9}, {3.6943862483835087`*^9, 3.694386304025415*^9}, {
+  3.6943863966914663`*^9, 3.694386406515238*^9}, {3.69438643976201*^9, 
+  3.6943864521755323`*^9}, {3.694386677305951*^9, 3.694386680522016*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.694374878610278*^9, 3.694375085280542*^9, 3.694375604244059*^9, 
+   3.694383661366527*^9, 3.694386307013892*^9, 3.6943863436994247`*^9, {
+   3.694386402402405*^9, 3.694386408224164*^9}, 3.694386457430057*^9}]
+}, Open  ]]
+},
+WindowSize->{614, 755},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4325, 111, 411, "Input"],
+Cell[4908, 135, 264, 4, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
